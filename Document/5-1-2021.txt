@@ -1,0 +1,7 @@
+first to leran kiya what git and what github then why use it.
+git me ssh key learn ki from youtube.
+then clone kese work krta hai vo sikha and then nickename kis command se get karte hai then checkout command use kiya kese work krta hai switch krne ke liye.
+then status check krne ke liye command dekha then file create karke git me add kiya nd the commit karke push kiya repository me .
+thne fetch or pull ka diffrence check kiya from google .
+merge commnd ko use karke error bi ai then fir pta chla ke mistack thi but fir ho gya.
+  
