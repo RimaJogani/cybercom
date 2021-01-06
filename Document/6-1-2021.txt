@@ -1,0 +1,12 @@
+Today i learn more command of git.
+-git touch command to create empty file.
+-git add -A command to use all file add in stage area.
+-git log command to see all commited details.
+-git log -p -2 command see last 2 commit details.
+-git diff commnd to see diffrence between working tree and staged area.
+-git diff --staged command to see diffrence between stage and commit.
+-git checkout -f command to get all recover file.
+-git rm nd git rm --cached commnd to remove file.
+-git branch  create,modified and delete.
+-git revert command.
+I keep learing those command so that i more clear about it.
