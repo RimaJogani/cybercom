@@ -1,0 +1,6 @@
+Today i also learn more command of git and easily understand.
+-see git revert --abort,--skip,--continue command .
+-git log command to see all commited details.
+-git merge and rebase command to use merge two file.
+-also learn git composer.
+finally all the basic command are understood very well.
