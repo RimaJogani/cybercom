@@ -1,0 +1,4 @@
+Today i learn basic javascript.In that see the data type how to use in js and how to declare and also perform it.
+than see variable mutation and type corecion.
+see basic operators like math operators,logical operators and also se typeof operator.
+also learn html basic tag like div,table,list..
