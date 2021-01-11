@@ -1,0 +1,5 @@
+Today i learn if/else statement,boolean logic,Ternary operaton,switch statement.
+than see falsy value and equality operation.
+see how to declare function and defined in js and also implement it.
+see how to defined diffrent data type in array and also learn push,pop,unshift,indexof etc.
+in html learn how to create form.
