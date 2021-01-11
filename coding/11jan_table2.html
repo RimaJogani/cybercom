@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+	<style type="text/css">
+		body{
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         th,td{  
+        border: 1px solid black;  
+        height: 10px;
+        
+        }  
+	</style>
+
+</head>
+<body>
+	<table style=" border-collapse: collapse;">
+		<tr>
+			<th>Heading1</th>
+			<th>Heading2</th>
+			<th>Heading3</th>
+		</tr>
+		<tr>
+			<td rowspan="2"><center><div style="padding-bottom: 20px;">Cell 1 text</div></center></td>
+			
+			<td rowspan="1"><center><div>Cell 2 text A</div></center></td>
+			<td rowspan="2"> <div style="padding-bottom: 20px;">cell 3 text</div></td>
+			
+
+		</tr>
+		
+		<tr>
+			<td><center  rowspan="1" >Cell 2 text B</center></td>
+
+			
+			
+
+		</tr>
+		<tr>
+			<td><center>a long piece of cell text all on one line without break</center> </td>
+			<td><center>cell text</center></td>
+			<td><div style="text-align: right;">cell text aligned right</div></td>
+		</tr>
+		<tr>
+			<td colspan="1"><b><center>cell text</b></center></td>
+			<td></td>
+			<td><center><div  style="background-color: grey;">graphic background</div></center></td>
+		</tr>
+		<tr>
+			<td colspan="3"><center><b>Mid-table Heading</b></center></td>
+		
+		</tr>
+		<tr>
+			<td>things to do today</td>
+			<td rowspan="5" align="center"><div><b style="font-size: 20px;">W<br>e<br>e<br>k<br>26</b></div></td>
+
+			<td>Monday</td>
+		</tr>
+		<tr>
+		<td style="background-color: red;">things to do tuesday</td>
+
+	
+		<td style="background-color: red;">Tuesday</td>
+	</tr>
+	<tr>
+		<td>things to do today</td>
+		<td>Wednesday</td>
+	</tr>
+	<tr>
+		<td style="background-color: green;"><center>Things to do today</center></td>
+		<td style="background-color: green;">Thrusday</td>
+	</tr>
+	<tr>
+		<td>Stuff to tidy up <b>before the weekend!!!</b></td>
+		<td>Friday</td>
+	</tr>
+		
+	</table>
+
+</body>
+</html>
