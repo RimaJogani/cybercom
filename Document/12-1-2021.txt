@@ -1,0 +1,9 @@
+Today i learn js Engine in that know about parser.
+see  global execution contexts and execution stack.
+learn hoisting only work for function declation
+see scope chain (lexical scoping) and ojects as well as methods.
+loops and iteration(for,while,continue,break,loop backward)
+see javascript version
+then learn form and practice of them.
+
+
