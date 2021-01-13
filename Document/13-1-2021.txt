@@ -1,0 +1,20 @@
+DOM and DOM Manipulation:-
+		Dom is object model.
+		It is structured representation of html document.
+		DOM is used to connect webpage javascript.
+HTMl and CSS:-
+		Basic css property.
+		class,div,id.3
+
+Session Storage:-
+			The sessionStorage object stores data for only one session .
+			exmple...var name = sessionStorage.getItem("key");
+			session is valid only for that particular tab.
+			
+Local Storage:-
+			Data is shared between all tabs.
+			need same origin,URL path can be different.
+			Data will not expier.
+			
+content security policy:- Is like http response header,It is use to enhance the 
+							 security of document.
