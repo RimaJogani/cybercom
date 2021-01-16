@@ -1,0 +1,16 @@
+-First class function:-function return function.
+
+-IIFEs(Immediately invoked function expression.)
+
+-closure:
+		An inner function has always access to the variable and parameters of its outer function,even often the other function has returned.
+	
+-see a new Es6.
+	-variable Declaration with let and const.
+	-blocks and IIFEs.
+	-Arrow Founction.
+	-Arrays.
+	-the spread operator.
+	-maps
+	-classes and subclasses
+	
