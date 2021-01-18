@@ -1,0 +1,4 @@
+See the basic Arrow function and practice it.
+practice about arrow function in that how to use lexical this keyword.
+also practice withy destructuring.
+see how to use and define Es6.
