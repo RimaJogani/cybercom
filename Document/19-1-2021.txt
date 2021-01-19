@@ -1,0 +1,8 @@
+Classes:-
+		Classes are the function which is used to define expression and declarations. 
+		Basically  the Java script is a classless language, it supports the object.
+		In the javascript class work in the same way like other language.
+
+Subclass :-
+		class are the blueprint.Javascript follow the inheritance property for making subclasses.
+		It creates a constructor and and each constructor  inherit the property of others  including their own property.
