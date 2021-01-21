@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>user form</title>
+</head>
+<body>
+	<form>
+		<center><input type="text" name="name" id="name" placeholder="Name" ></center><br>
+	<center><input type="email" name="email" id="email" placeholder="Email"></center><br>
+	<center><input type="password" name="pass" id="pass" placeholder="Password"></center><br>
+	<center><input type="date" name="date" id="date"></center><br>
+
+	<center><input type="button" name="add" value="add" onclick="userAdd();"/></center>
+
+	</form>
+
+	<script src="user.js"></script>
+	<script type="text/javascript">
+		
+var arr = localStorage.getItem('user');
+        var items = JSON.parse(arr);
+        
+        arr = items;
+
+        
+        document.write('<table border = "1" id = "table1">');
+        document.write('<tr>');
+        document.write('<th>Name</th> <th>Email</th> <th>Date Of Birth</th> </tr> <tr>');
+                    
+            if(arr == null )
+            {
+                alert("Records not found!");
+                document.getElementById("table1").style.display = "none";
+                window.location.href = "login.html";
+            }           
+            else
+            {
+                for(var k = 0 ; k < arr.length; k++)
+                {   
+                    document.write('<td>'+ arr[k].name + '</td>' );
+                    document.write('<td>'+ arr[k].email + '</td>' );
+                    document.write('<td>'+ arr[k].date + '</td>' );
+                     document.write('<td><button onclick="editHtmlTbleSelectedRow();">Edit</button></td>');
+                     document.write(' <td><button onclick="removeSelectedRow();">Remove</button></td>');
+               
+                    document.write('</tr>');
+                }
+            }
+            document.write('</table>'); 
+    
+
+	</script>
+	
+
+</body>
+</html>
