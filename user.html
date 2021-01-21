@@ -2,18 +2,43 @@
 <html>
 <head>
 	<title>user form</title>
+	<link rel="stylesheet" href="dashboard.css"/>
 </head>
 <body>
-	<form>
-		<center><input type="text" name="name" id="name" placeholder="Name" ></center><br>
-	<center><input type="email" name="email" id="email" placeholder="Email"></center><br>
-	<center><input type="password" name="pass" id="pass" placeholder="Password"></center><br>
-	<center><input type="date" name="date" id="date"></center><br>
+<nav>
+        <ul>
+            <li>
+                <h5><label id="name">Hello, </label></h5>
+            </li>
+            <li>
 
-	<center><input type="button" name="add" value="add" onclick="userAdd();"/></center>
+                <a href="dashboard.html">Dashboard</a>
+               
+            </li>
+            <li>
+                <a href="user.html">User</a>
+            </li>
+            <li>
+                <a href="session.html">Login Session</a>
+            </li>
+            <li>
+                <a href="logout.html">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+<div class="align">
+	<form>
+		<h1>User</h1>
+		<input type="text" name="name" id="name" placeholder="Name" >
+	<input type="email" name="email" id="email" placeholder="Email">
+	<input type="password" name="pass" id="pass" placeholder="Password">
+	<input type="date" name="date" id="date">
+
+	<input type="button" name="add" value="add" onclick="userAdd();"/>
 
 	</form>
-
+</div>
 	<script src="user.js"></script>
 	<script type="text/javascript">
 		
@@ -23,9 +48,9 @@ var arr = localStorage.getItem('user');
         arr = items;
 
         
-        document.write('<table border = "1" id = "table1">');
+        document.write('<br><br><center><table border = "1" id = "table1"></center');
         document.write('<tr>');
-        document.write('<th>Name</th> <th>Email</th> <th>Date Of Birth</th> </tr> <tr>');
+        document.write('<th>Name</th> <th>Email</th> <th>password</th> <th>Date Of Birth</th> </tr> <tr>');
                     
             if(arr == null )
             {
@@ -39,6 +64,7 @@ var arr = localStorage.getItem('user');
                 {   
                     document.write('<td>'+ arr[k].name + '</td>' );
                     document.write('<td>'+ arr[k].email + '</td>' );
+					document.write('<td>'+ arr[k].pass + '</td>' );
                     document.write('<td>'+ arr[k].date + '</td>' );
                      document.write('<td><button onclick="editHtmlTbleSelectedRow();">Edit</button></td>');
                      document.write(' <td><button onclick="removeSelectedRow();">Remove</button></td>');
