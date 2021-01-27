@@ -1,0 +1,6 @@
+see the Array how to use and define.
+Associative Array:-use key and value pair useing =>.
+see multi dimentional Array and also learn foreach.
+include and required use to predefine template or as header.
+see more on expression matching,String length,string position and replace String.
+
