@@ -1,0 +1,29 @@
+1)Session :-
+			A session creates a file in a temporary directory on the server where registered session variables and their values are stored. This data will be available to all pages on the site during that visit.
+			first start the session_start() and then $_SESSION['name']="value" then session_unset or session_destroy.
+2)Cookies :-
+			Cookies are text files stored on the client computer and they are kept of use tracking purpose.
+			first create cookie:- setcookie(name,value,expire,path,domain,secure,httponly).
+			second view the cookie:- $_COOKIE[name].
+			third delete the cookie:-setcookie(name,value,time()-seconds).
+-see the diffrent between session and cookie.
+3)File Handling:-
+			fopen("file name")-
+								used to open file or url.
+			feof("file name")-
+								test for end of file.and return true if you are at end of file.
+
+			fgets("fike name")-
+								used to read a single line from a file.
+			fclose("file name")-
+								used to close an file.
+			fwrite(file,data)-
+								used to write to an open file.
+			file("file name")- 
+								used to read entire file into an array.
+			
+
+
+
+
+		
