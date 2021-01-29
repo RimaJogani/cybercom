@@ -1,0 +1,3 @@
+File Descriptions are a user-defined string that can be assigned to a file or folder,
+often used to keep notes about the file contents. 
+ The NTFS comments system uses the Alternate Data Stream feature of the NTFS file system to store the description for a file in a separate data stream attached to the file.Hello WorldHello WorldHello World\nHello World\nHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello Worldrimariddhiriddhipayalpayalumangworld war 1rimaworld war 1world war 1rimaworld war 1world war 1rimaworld war 1rimaworld war 1world war 1rimaworld war 1world war 1umangworld war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1world war 1
