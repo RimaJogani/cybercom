@@ -1,4 +1,20 @@
+function disablebutton(){
+    document.getElementById('submit').disabled = true;
+}
 
+
+
+
+function activateButton(element) {
+
+    if(element.checked) {
+      document.getElementById("submit").disabled = false;
+     }
+     else  {
+      document.getElementById("submit").disabled = true;
+    }
+
+}
 
 
 function validation() {
@@ -7,15 +23,20 @@ function validation() {
 
  var uname=document.getElementById('uname').value;
 
-  var upass=document.getElementById("upass").value;
-  var uaddress=document.getElementById("uaddress").value;
-  var ugame=document.getElementsByName("ugame[]");
-  var ugender=document.uForm.ugender.value;
- 
-  var uage=document.getElementById("uage").value;
- var ufile=document.getElementById("ufile").value;
+ var upass=document.getElementById('upass').value;
+var ugender=document.uForm.ugender.value;
+ var uaddress=document.getElementById("uaddress").value;
+ var month=document.getElementById("month").value;
+ var day=document.getElementById("day").value;
+ var year=document.getElementById("year").value;
 
-	
+  var ugame=document.getElementsByName("ugame[]");
+var MaritalStatus=document.uForm.MaritalStatus.value;
+ 
+ // var uage=document.getElementById("uage").value;
+ //var ufile=document.getElementById("ufile").value;
+
+    
 
   if (uname == "") {
   
@@ -32,8 +53,7 @@ function validation() {
     return false;
     }
 
-
-    if(upass == ""){
+if(upass == ""){
     document.getElementById('upass_e').innerHTML =" * Please fill the password field";
     return false;
     }
@@ -41,12 +61,30 @@ function validation() {
     document.getElementById('upass_e').innerHTML =" * Passwords length must be between  8 and 20";
     return false;   
     }
-  
- if(uaddress == ""){
+
+
+if(ugender==""){
+    document.getElementById('ugender_e').innerHTML =" * Please Check gender";
+    return false;
+ }
+if(uaddress == ""){
     document.getElementById('uaddress_e').innerHTML =" * Please fill the password field";
     return false;
     }
 
+if(month == "none"){
+    document.getElementById('bod').innerHTML =" * select a month";
+    return false;
+    }
+
+if(day == "none"){
+    document.getElementById('bod').innerHTML =" * select a day";
+    return false;
+    }
+if(year == "none"){
+    document.getElementById('bod').innerHTML =" * select a year";
+    return false;
+    }
 var game = [];
  var checked=false;
     for(var i=0; i < ugame.length; i++) {
@@ -62,25 +100,14 @@ var game = [];
         return false;
     }
 
-
-
- if(ugender==""){
-    document.getElementById('ugender_e').innerHTML =" * Please Check gender";
+    if(MaritalStatus==""){
+    document.getElementById('maritalstatus_e').innerHTML =" * Please Check MaritalStatus";
     return false;
  }
-
-if(uage=="none"){
-    document.getElementById('uage_e').innerHTML =" * Please Check age group";
-    return false;
- }
+   
+  
+ 
 
 
-if(ufile==""){
-    document.getElementById('ufile_e').innerHTML =" * Please upload file";
-    return false;
- }
-
-    
-
- }
+}
 

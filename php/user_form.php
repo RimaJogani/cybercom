@@ -1,28 +1,51 @@
 <?php
 
- $uname=$upass=$uaddress=$ugame=$ugender=$uage=$ufile="";
+
 
  
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
 
-  	 $uname = testdetails($_POST["uname"]);
-  	 $upass=testdetails($_POST["upass"]);
-  	 $uaddress=testdetails($_POST["uaddress"]);
-  	 $ugame=$_POST['ugame'];
-  	 $ugender=testdetails($_POST['ugender']);
-  	  $uage=$_POST['uage'];
-  	  $ufile=testdetails($_POST['ufile']);
+  	if(isset($_POST['uname']) && isset($_POST['upass']) && isset($_POST['uage']) && isset($_POST['ugame']) && isset($_POST['ugender']) && isset($_POST['ufile'])){
+	if(!empty($_POST['uname']) && !empty($_POST['upass']) && !empty($_POST['uage']) && !empty($_POST['ugame']) && !empty($_POST['ugender']) && !empty($_POST['ufile'])){
+			$name=$_POST['uname'];
+			$password=$_POST['upass'];
+			$address=$_POST['uaddress'];
+			$age=$_POST['uage'];
+			$game=$_POST['ugame'];
+			$gender=$_POST['ugender'];
+			$file=$_POST['ufile'];
+					echo "Welcome, ".$name."!!!!<br>";
+					echo "password: ".$password."<br>";
+					echo "address: ".$address."<br>";
+					echo "age: ".$age."<br>";
+					echo "gender: ".$gender."<br>";
+					echo "file name: ".$file."<br>";
+					echo "Select Game :";
+					foreach($game as $value){
+						echo $value." , ";
+					}
+	}else{
+			$name="";
+			$password="";
+			$address="";
+			$age="";
+			$game="";
+			$gender="";
+			$file="";
+	}
+}else{
+			$name="";
+			$password="";
+			$address="";
+			$age="";
+			$game="";
+			$gender="";
+			$file="";
+  	 
 
-
-	 }
+	} 
 
 	 
- function testdetails($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-         }
 
 
 
@@ -34,68 +57,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<title>User Form</title>
+	<script type="text/javascript" src="user_form_js.js"></script>
+	<style type="text/css">
 
+			.backcolor-blue{
+				background-color: #3366FF;
+			}
+			.input{
+				background-color: #CCFF66 ;
+				margin:0px 30px;
+			}
+			
+			select{
+				background-color: #CCFF66 ;
+			}
+			textarea{
+				background-color: #CCFF66 ;
+			}
+			.backcolor-yellow{
+				background-color: #FFFF33;
+			}
+			.text-red{
+				color:#FF0000;
+				font-weight:bold;
+				text-align:center;
+			}
+
+			.red{
+				color:red;
+				font-size:16px;
+			}
+
+			form{
+				margin-left: 500px;
+			}
+
+
+	</style>
 </head>
 <body>
 
-	<form action="user_form.php" method="post" name="form">
+	<form action="user_form.php"  name="uForm" method="post" onsubmit="return validation()">
+
 		<table  border="1" height="400" width="400">
-			<tr>
+			<tr class="backcolor-yellow">
 		         <td colspan="2"><h1><center>User Form</center></h1></td>
 	         </tr>
-	         <tr>
-	         	<td><label>Enter Name:</label></td>
-	         	<td><input type="text"  id="uname" name="uname" required><p id="uname_e"></p></td>
+	         <tr class="backcolor-blue">
+	         	<td>Enter Name:</td>
+	         	<td><input type="text"  id="uname" name="uname"><br><span  id="uname_e"  class="red"></span></td>
 	         </tr>
-	          <tr>
+	          <tr class="backcolor-blue">
 	         	<td>Enter Password:</td>
-	         	<td><input type="Password" id="upass" name="upass" required><p id="upass_e"></p></td>
+	         	<td><input type="Password" id="upass" name="upass"><br><span  id="upass_e"  class="red"></span></td>
 	         </tr>
-	          <tr>
+	          <tr class="backcolor-blue">
 	         	<td>Enter Address:</td>
-	         	<td><textarea id="uaddress"name="uaddress" rows="3" cols="20" required></textarea><p id="uaddress_e"></p></td>
-	         </tr>
-	         <tr>
-	         	<td>Select Game:</td>
-	         	<td ><input type="checkbox" name="ugame[]" value="Hockey">Hockey<br>
-	         		<input type="checkbox" name="ugame[]" value="Football">Football<br>
-	         		<input type="checkbox" name="ugame[]" value="Badminton">Badminton<br>
-	         		<input type="checkbox" name="ugame[]" value="Cricket">Cricket<br>
-	         		<input type="checkbox" name="ugame[]" value="Volleyball">Volleyball<br><p id="ugame_e"></p>
-
+	         	<td><textarea id="uaddress" name="uaddress" rows="3" cols="20"></textarea><br><span  id="uaddress_e"  class="red"></span>
 	         	</td>
 	         </tr>
-	         <tr>
+	         <tr class="backcolor-blue">
+	         	<td>Select Game:</td>
+	         	<td ><input type="checkbox" name="ugame[]" id="ugame[]" value="Hockey">Hockey<br>
+	         		<input type="checkbox" name="ugame[]" id="ugame[]" value="Football">Football<br>
+	         		<input type="checkbox" name="ugame[]" id="ugame[]" value="Badminton">Badminton<br>
+	         		<input type="checkbox" name="ugame[]" id="ugame[]" value="Cricket">Cricket<br>
+	         		<input type="checkbox" name="ugame[]" id="ugame[]" value="Volleyball">Volleyball<br><span id="ugame_e"  class="red"></span>
+
+	         	</td>
+	         </tr >
+	         <tr class="backcolor-blue">
 	         	<td>Gender:</td>
 	         	<td>
-	         		<input type="radio" name="ugender" value="male">Male<input type="radio" name="ugender" value="female">Female
-
+	         		<input type="radio" name="ugender" id="ugender" value="male">Male<input type="radio" id="ugender" 
+	         		name="ugender" value="female">Female<br><span  id="ugender_e"  class="red"></span>
 	         	</td>
 	         </tr>
-	         <tr>
+	         <tr class="backcolor-blue">
 	         	<td>Select ur age</td>
 	         	<td>
-	         		<select id="uage" name="uage[]"required>
-	         			<option >select age</option>
+	         		<select id="uage" name="uage">
+	         			<option name="select"  selected hidden disabled value="none" >select age</option>
 	         			<option value="1-15">1-15</option>
 	         			<option value="16-30">16-30</option>
 	         			<option value="31-60">31-60</option>
 	         			<option value="60 above">60 above</option>
 
-	         		</select ><p id="uage_e"></p>
+	         		</select><br><span id="uage_e"  class="red"></span>
 
 	         	</td>
 	         </tr>
-	         <tr>
-	         	<td colspan="2"><center><input type="file" id="ufile" name="ufile" required></center><p id="ufile_e"></p></td>
+	         <tr class="backcolor-blue">
+	         	<td colspan="2"><center><input type="file" id="ufile" name="ufile" ></center><br><span id="ufile_e"  class="red"></span></td>
 	         </tr>
-	         <tr>
+	         <tr class="backcolor-blue">
 	         	<td colspan="2">
-	         		<center><input type="submit" name="reset" value="Reset">
-	         		<button onclick="funValidation()">Submit</button></center>
+	         		<center><input type="reset" name="reset" value="Reset">
+	         		<input type="submit" name="submit" value="submit"></center>
 	         	</td>
 	         </tr>
 	         
@@ -103,24 +163,8 @@
 		</table>
 	</form>
 
-	<script src="user_form_js.js"></script>
+	
 
-<?php
-         echo "<h2>Your given values are as :</h2>";
-         echo ("<p>Your name is $uname</p>");
-         echo ("<p> your Password is $upass</p>");
-         echo ("<p>Your Address is $uaddress</p>");
-         echo ("<p>your gender $ugender </p>");
 
-         echo ("<p>your file name is $ufile</p>");
-         
-         for($i = 0; $i < count($ugame); $i++) {
-            echo($ugame[$i] . " ");
-         }
-         echo '<br>';
-          for($i = 0; $i < count($uage); $i++) {
-            echo("select age is :".$uage[$i] . " ");
-         }
-      ?>
 </body>
 </html>

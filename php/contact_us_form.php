@@ -1,155 +1,106 @@
 <?php
+require 'database_connection.php';
+  if(isset($_POST['uname']) && isset($_POST['uemail']) && isset($_POST['usubject']) && isset($_POST['umsg'])){
 
-$uname=$uemail=$subject=$msg='';
+      if(!empty($_POST['uname']) && !empty($_POST['uemail']) && !empty($_POST['usubject']) && !empty($_POST['umsg'])){
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $uname=$_POST['uname'];
+          $uemail=$_POST['uemail'];
+          $usubject=$_POST['usubject'];
+          $umsg=$_POST['umsg'];
 
-  	 $uname = testdetails($_POST["uname"]);
-  	 $uemail=testdetails($_POST["uemail"]);
-  	 $subject=testdetails($_POST["subject"]);
-  	 
-  	 $msg=testdetails($_POST['msg']);
-  	 
+          echo "Name is : ".$uname."<br>";
+          echo "Email is : ".$uemail."<br>";
+          echo "Subject is : ".$usubject."<br>";
+          echo "Massege is : ".$umsg."<br>";
+      }
 
+        $qry="INSERT into user_contact_form(name,email,subject,msg) VALUES ('".$uname."','".$uemail."','".$usubject."','".$umsg."')";
 
-	 }
+          //echo $qry;
 
-	 
- function testdetails($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-         }
+          $rs = mysqli_query($mysqli,$qry);
+            if($rs)
 
+              {
+                echo "Insert Success!";
+              }
+            else
+              {
+                echo "Insert Error!";
+              }
+
+  }
 
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	
-	<title></title>
-</head>
-<body>
-	<style type="text/css">
-		 
+	<title>Contact Us</title>
+	<script type="text/javascript" src="contact_us_js.js"></script>
+  <style type="text/css">
+     
         
        
       
-      		 input[type=text] {
-      		 	border: 2px solid #ccc;
- 				 border-radius: 4px;
-  				font-size: 16px;
-  				width: 60%;
-  				box-sizing: border-box;
-  				background-color: white;
-  				background-image: url(img/user.png);
-  				background-position: 10px 10px; 
-  				background-repeat: no-repeat;
-  				padding: 12px 20px 12px 40px;
-  				padding-left: 50px;
-  			}
-  			 input[type=email] {
-  				width: 60%;
-  				box-sizing: border-box;
-  				border: 2px solid #ccc;
- 				 border-radius: 4px;
-  				font-size: 16px;
-  				background-color: white;
-  				background-image: url(img/email.png);
-  				background-position: 10px 10px; 
-  				background-repeat: no-repeat;
-  				padding: 12px 20px 12px 40px;
-  				padding-left: 50px;
-  			}
-  			 input[type=tel] {
-  				width: 60%;
-  				box-sizing: border-box;
-  				border: 2px solid #ccc;
- 				 border-radius: 4px;
-  				font-size: 16px;
-  				background-color: white;
-  				background-image: url(img/phone.png);
-  				background-position: 10px 10px; 
-  				background-repeat: no-repeat;
-  				padding: 12px 20px 12px 40px;
-  				padding-left: 50px;
-  			}
-  			textarea
-  			{
-  				width: 60%;
-  				box-sizing: border-box;
-  				border: 2px solid #ccc;
- 				 border-radius: 4px;
-  				font-size: 16px;
-  				background-color: white;
-  				background-image: url(img/textarea.png);
-  				background-position: 10px 10px; 
-  				background-repeat: no-repeat;
-  				
-  				padding-left: 50px;
-  			}
-  			 button {
-  				width: 60%;
-  				box-sizing: border-box;
-  				border: 2px solid #ccc;
- 				 
-  				font-size: 16px;
-  				background-color: lightblue;
-  				color: #fff;
-  				height: 30px;
-  				
-  				padding: 5px 10px 5px 10px;
-  				
-  			
-  			}
-	</style>
-	
-​
-	
-
-</body>
-
-<form style="background-color: #EDC364; width:600px;height:500px; border:8px solid #523810; margin-left: 400px" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-	<center>
-
-
-	
-	<h2>CONTACT US</h2>
-	
-
-</center>
-
-<center>
-  <input  type="text" id="uname" name="uname" placeholder="Name...." required><p id=uname_e></p>
-  
-<br>
-   <input  type="email" id="uemail" name="uemail" placeholder="Email....." required><p id=uemail_e></p><br>
-   <input  type="text" id="subject" name="subject" placeholder="Sunject......" required><p id=subject_e></p><br>
-   <textarea id="msg" name="msg" rows="4" cols="40" required></textarea><p id=msg_e></p>
-</center><br>
-  <center><button onclick="submitFunction()">Ok</button></center>
-</form>
-
-
-
-
-<script src="contact_us_js.js"></script>
-<?php 
-
-
-
-         echo ("<p>Your name is $uname</p>");
-         echo ("<p> your email address is $uemail</p>");
-         echo ("<p>Your subject $subject</p>");
-         echo ("<p>your msg $msg </p>");
+           input[type=text] {
+                        
+                      font-size: 16px;
+                      width: 60%;
+                      box-sizing: border-box;
+              }
+              input[type=email] {
+                    font-size: 16px;
+                    width: 60%;
+                    box-sizing: border-box;
+                  }
         
-?>
+          form{
+                  background-color: #EDC364;
+                  width:600px;
+                  height:500px;
+                  border:8px solid #523810;
+                  margin-left: 400px;
 
+            } 
+            input[type=submit]{
+                    width: 60%;
+                    
+                   
+                    font-size: 16px;
+                    background-color: lightblue;
+                    
+                    height: 30px;
+            }
+
+        textarea
+        {
+          width: 60%;
+          box-sizing: border-box;
+          border: 2px solid #ccc;
+         border-radius: 4px;
+          font-size: 16px;
+          
+          padding-left: 50px;
+        }
+      
+      </style>
+</head>
+<body>
+<form action="contact_us_form.php" name="uForm" method="post" onsubmit="return validation()">
+	
+	<center>
+    <h1>Contact Us</h1>
+
+    <input type="text" name="uname" id="uname" placeholder="Name....."><br><span id="uname_e"></span>
+	<br>
+  <input type="email" name="uemail" id="uemail" placeholder="Email....."><br><span id="uemail_e"></span>
+  <br>
+  <input type="text" name="usubject" id="usubject" placeholder="Subject....."><br><span id="usubject_e"></span>
+  <br>
+  <textarea name="umsg" id="umsg" rows="5" cols="20"></textarea><br><span id="umsg_e"></span><br>
+	<input type="submit" name="submit" value="submit"></center>
+</form>
+</body>
 </html>
