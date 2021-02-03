@@ -1,26 +1,3 @@
-<?php
-
-
-
-  if(isset($_POST['uemail']) && isset($_POST['upass'])){
-
-
-    if(!empty($_POST['uemail']) && !empty($_POST['upass'])){
-
-          $pass=$_POST['upass'];
-          $email=$_POST['uemail'];
-
-          echo "your Email Id : ".$email."<br>";
-          echo "Your Password is : ".$pass."<br>";
-    }
-
-  }
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,16 +10,9 @@
 
 </body>
 
-<form  action="signin_form.php" method="post" onsubmit="return submitFunction()">
+<form  action="signin_header.php" method="post" onsubmit="return submitFunction()">
   
-
-
-  
-  
-  
-
-
-    <h2>Sign In</h2>
+   <h2>Sign In</h2>
     Email Address<br>
     <input  type="email" id="uemail" name="uemail"><br><span id=uemail_e></span><br>
     Password<br>

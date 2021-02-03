@@ -1,80 +1,3 @@
-<?php
-
-
-require 'database_connection.php';
- 
-  
-
-  	if(isset($_POST['uname']) && isset($_POST['upass']) && isset($_POST['uage']) && isset($_POST['ugame']) && isset($_POST['ugender']) && isset($_POST['ufile'])){
-	if(!empty($_POST['uname']) && !empty($_POST['upass']) && !empty($_POST['uage']) && !empty($_POST['ugame']) && !empty($_POST['ugender']) && !empty($_POST['ufile'])){
-			$name=$_POST['uname'];
-			$password=$_POST['upass'];
-			$address=$_POST['uaddress'];
-			$age=$_POST['uage'];
-			$game=$_POST['ugame'];
-			$gender=$_POST['ugender'];
-			$file=$_POST['ufile'];
-					echo "Welcome, ".$name."!!!!<br>";
-					echo "password: ".$password."<br>";
-					echo "address: ".$address."<br>";
-					echo "age: ".$age."<br>";
-					echo "gender: ".$gender."<br>";
-					echo "file name: ".$file."<br>";
-					echo "Select Game :";
-					foreach($game as $value){
-						echo $value." , ";
-					}
-
-					$t1=implode(',', $_POST['ugame']);
-
-					$qry="INSERT into user_form1(name,password,address,
-				age,gender,game,file) VALUES ('".$name."','".$password."','".$address."'
-					,'".$age."','".$gender."','".$t1."','".$file."')";
-
-					//echo $qry;
-
-					$rs = mysqli_query($mysqli,$qry);
-						if($rs)
-
-							{
-								echo "Insert Success!";
-							}
-						else
-							{
-								echo "Insert Error!";
-							}
-
-
-
-
-
-	}else{
-			$name="";
-			$password="";
-			$address="";
-			$age="";
-			$game="";
-			$gender="";
-			$file="";
-	}
-}else{
-			$name="";
-			$password="";
-			$address="";
-			$age="";
-			$game="";
-			$gender="";
-			$file="";
-  	 
-
-	} 
-
-	 
-
-
-
-?>
-
 
 
 
@@ -123,7 +46,7 @@ require 'database_connection.php';
 </head>
 <body>
 
-	<form action="user_form.php"  name="uForm" method="post" onsubmit="return validation()">
+	<form action="user_form_header.php"  name="uForm" method="post" onsubmit="return validation()">
 
 		<table  border="1" height="400" width="400">
 			<tr class="backcolor-yellow">
