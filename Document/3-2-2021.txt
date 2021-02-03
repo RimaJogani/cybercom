@@ -1,0 +1,3 @@
+-Form practice with database connection using header location.
+-learn the all sql query like,selecte,insert,update,delete.
+-learn join types and perform it.
