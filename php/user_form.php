@@ -1,7 +1,7 @@
 <?php
 
 
-
+require 'database_connection.php';
  
   
 
@@ -24,6 +24,30 @@
 					foreach($game as $value){
 						echo $value." , ";
 					}
+
+					$t1=implode(',', $_POST['ugame']);
+
+					$qry="INSERT into user_form1(name,password,address,
+				age,gender,game,file) VALUES ('".$name."','".$password."','".$address."'
+					,'".$age."','".$gender."','".$t1."','".$file."')";
+
+					//echo $qry;
+
+					$rs = mysqli_query($mysqli,$qry);
+						if($rs)
+
+							{
+								echo "Insert Success!";
+							}
+						else
+							{
+								echo "Insert Error!";
+							}
+
+
+
+
+
 	}else{
 			$name="";
 			$password="";

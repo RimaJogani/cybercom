@@ -29,9 +29,12 @@ require 'D:\xampp_setup\htdocs\new_cycr\1\database_connection.php';
 					echo $value."   ";
 				}
 				echo "<br>Marital Status : ".$MaritalStatus;
+
+
+				 $t1=implode(',', $_POST['ugame']);
 	            $qry="INSERT into user_form(first_name,password,gender,
 				address,dob,game,status) VALUES ('".$name."','".$password."','".$gender."'
-					,'".$address."','".$day.$month.$year."','".$value."','".$MaritalStatus."')";
+					,'".$address."','".$day.$month.$year."','".$t1."','".$MaritalStatus."')";
 
 					//echo $qry;
 
