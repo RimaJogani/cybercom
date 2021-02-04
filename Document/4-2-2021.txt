@@ -1,0 +1,4 @@
+-login and register form practice use the session.
+-learn the all sql query like,selecte,insert,update,delete.
+-learn join types and perform it.
+-learn throw Exception and custom Exception.
