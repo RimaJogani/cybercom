@@ -1,0 +1,13 @@
+class-
+	A class is an entity that determines how an object will behave and what the object will contain. 
+object-
+	Objects are also known as an instance of the class.
+const -
+	value of these variables cannot be changed any how after assigning.If we are inside the class then values of the constants can be get using self keyword.
+Constructor-	
+	it initialization that the object may need before it is used.
+	syntax-__construct() or same name as class name.
+Access Specifiers -
+			Public - class members with this access modifier will be publicly accessible from anywhere, even from outside the scope of the class.
+			Private - class members with this keyword will be accessed within the class itself. It protects members from outside class access with the reference of the class instance.
+			Protected - same as private, except by allowing subclasses to access protected superclass members.
